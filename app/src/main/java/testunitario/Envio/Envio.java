@@ -1,5 +1,6 @@
 package testunitario.Envio;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -12,6 +13,11 @@ public class Envio {
     private static final Set<Integer> generatedNumbers = new HashSet<>();
     private int numeroEnvio;
     private List<Pedido> pedidos;
+ 
+    public Envio() {
+        this.numeroEnvio = generateRandomNumeroEnvio();
+        this.pedidos = new ArrayList<>();
+    }
 
     public List<Pedido> getPedidos() {
         return pedidos;
@@ -24,9 +30,7 @@ public class Envio {
     public void addPedido (Pedido e){
         pedidos.add(e);
     }
-    public Envio() {
-        this.numeroEnvio = generateRandomNumeroEnvio();
-    }
+   
 
     public int getNumeroEnvio() {
         return numeroEnvio;
