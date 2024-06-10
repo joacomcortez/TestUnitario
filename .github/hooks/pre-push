@@ -4,6 +4,8 @@
 ./gradlew clean test
 
 # Check if the tests passed
+#-ne = not equal
+# $? contiene el resultado de los tests
 if [ $? -ne 0 ]; then
   echo "Tests failed, push aborted."
   exit 1
