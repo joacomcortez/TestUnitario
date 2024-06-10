@@ -10,7 +10,7 @@ import testunitario.Cliente.Cliente;
 
 public class TestCliente {
     @Test
-    public void validarNombreClaseCliente(){
+    public void validarClaseCliente(){
         Cliente cliente = new Cliente("nombre","apellido",5500);
         assertNotNull(cliente, "La instancia de cliente debe estar creada");
     }
