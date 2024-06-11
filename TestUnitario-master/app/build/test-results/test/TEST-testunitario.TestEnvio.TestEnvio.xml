@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testunitario.TestEnvio.TestEnvio" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-11T01:03:20" hostname="DESKTOP-9N6A138" time="0.006">
-  <properties/>
-  <testcase name="testArrayPedidos()" classname="testunitario.TestEnvio.TestEnvio" time="0.004"/>
-  <testcase name="testNumeroPedido()" classname="testunitario.TestEnvio.TestEnvio" time="0.0"/>
-  <testcase name="validarClaseEnvio()" classname="testunitario.TestEnvio.TestEnvio" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

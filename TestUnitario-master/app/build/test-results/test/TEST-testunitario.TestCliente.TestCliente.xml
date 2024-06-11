@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testunitario.TestCliente.TestCliente" tests="2" skipped="0" failures="0" errors="0" timestamp="2024-06-11T01:03:20" hostname="DESKTOP-9N6A138" time="0.003">
-  <properties/>
-  <testcase name="validarClaseCliente()" classname="testunitario.TestCliente.TestCliente" time="0.001"/>
-  <testcase name="testGettersCliente()" classname="testunitario.TestCliente.TestCliente" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>

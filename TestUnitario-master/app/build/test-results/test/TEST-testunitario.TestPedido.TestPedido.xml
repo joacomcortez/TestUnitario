@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="testunitario.TestPedido.TestPedido" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-06-11T01:03:20" hostname="DESKTOP-9N6A138" time="0.002">
-  <properties/>
-  <testcase name="validarClasePedido()" classname="testunitario.TestPedido.TestPedido" time="0.001"/>
-  <testcase name="testNumeroPedido()" classname="testunitario.TestPedido.TestPedido" time="0.0"/>
-  <testcase name="testValidezFecha()" classname="testunitario.TestPedido.TestPedido" time="0.0"/>
-  <system-out><![CDATA[]]></system-out>
-  <system-err><![CDATA[]]></system-err>
-</testsuite>
