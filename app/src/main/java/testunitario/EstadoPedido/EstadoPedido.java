@@ -1,6 +1,5 @@
 package testunitario.EstadoPedido;
 
-import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,6 +14,10 @@ public class EstadoPedido {
         this.codEstadoPedido = generateRandomNumeroEnvio();
     }
     
+    public int getCodEstadoPedido() {
+        return codEstadoPedido;
+    }
+
     private int generateRandomNumeroEnvio() {
         int randomNum;
         do {

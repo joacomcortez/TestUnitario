@@ -9,14 +9,14 @@ import testunitario.EstadoEnvio.EstadoEnvio;
 
 public class TestEstadoEnvio {
     @Test
-    public void validarClaseCreadaEstadoEnvio(){
+    public void validarClaseEstadoEnvio(){
         EstadoEnvio estadoEnvio1 = new EstadoEnvio("Creado");
-        assertNotNull(estadoEnvio1);
+        assertNotNull(estadoEnvio1," la instancia de estadoEnvio no es null");
     }
 
     @Test
-    public void validarInstanciaCreadaEstadoEnvio(){
+    public void validarGetterEstadoEnvio(){
         EstadoEnvio estadoEnvio2 = new EstadoEnvio("En camino");
-        assertEquals(estadoEnvio2, estadoEnvio2.getNombreEstadoEnvio());
+        assertEquals(estadoEnvio2.getNombreEstadoEnvio(), "En camino");
     }
 }

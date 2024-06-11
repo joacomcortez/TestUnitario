@@ -1,11 +1,11 @@
 #!/bin/sh
 # este archivo hace que si algun test da fallido, el push no se ejecute
 # Run the tests with Gradle
-./gradlew clean test
+./gradle clean test
 
 # Check if the tests passed
 #-ne = not equal
-# $? contiene el resultado de los tests
+# $? contiene el resultado de los tests, es una variable reservada
 if [ $? -ne 0 ]; then
   echo "Tests failed, push aborted."
   exit 1
@@ -13,3 +13,4 @@ fi
 
 # Allow the push to proceed
 exit 0
+
