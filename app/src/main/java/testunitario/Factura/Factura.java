@@ -23,7 +23,7 @@ public class Factura {
         pedido = p;
     }
 
-    public Pedido getPedido(){
+    public Pedido getPedido() {
         return pedido;
     }
     public int getNumFactura() {
