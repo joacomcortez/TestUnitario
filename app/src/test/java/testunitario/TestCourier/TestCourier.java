@@ -11,19 +11,19 @@ import testunitario.Courier.Courier;
 public class TestCourier {
 
     @Test
-    public void validarClaseCourier(){
+    public void validarClaseCourier() {
         Courier courier = new Courier("andesmar");
         assertNotNull(courier, "La instancia de Courier debe estar creada");
     }
     
     @Test
-    public void testNumeroCourier(){
+    public void testNumeroCourier() {
         Courier courier = new Courier("andesmar");
         assertNotNull(courier.getNumCourier(), "El numero de Courier no debe ser null");
     }
 
     @Test
-    public void testDatesCourier(){
+    public void testDatesCourier() {
         Courier courier = new Courier("andesmar");
         assertNotNull(courier.getFechaAltaCourier(), "la fecha no debe ser null");
         assertNull(courier.getFechaBajaCourier(),"la fecha baja debe ser null");

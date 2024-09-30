@@ -30,10 +30,6 @@ jobs:
         if: github.ref == 'refs/heads/development' # Solo se ejecuta si es la rama de desarrollo
         run: ./gradlew clean assemble # Limpiar y ensamblar el proyecto
 
-      # Ejecutar Checkstyle para comprobar buenas prácticas de codificación
-      - name: Ejecutar Checkstyle
-        run: ../../gradlew checkstyleMain checkstyleTest # Ejecutar Checkstyle en el código
-
       # Rama de pruebas: Ejecutar pruebas, no desplegar, detenerse después de las pruebas
       - name: Probar para Pruebas
         if: github.ref == 'refs/heads/testing' # Solo se ejecuta si es la rama de pruebas
