@@ -32,7 +32,7 @@ jobs:
 
       # Ejecutar Checkstyle para comprobar buenas prácticas de codificación
       - name: Ejecutar Checkstyle
-        run: ../../gradlew checkstyleMain checkstyleTest # Ejecutar Checkstyle en el código
+        run: ./gradlew checkstyleMain checkstyleTest # Ejecutar Checkstyle en el código
 
       # Rama de pruebas: Ejecutar pruebas, no desplegar, detenerse después de las pruebas
       - name: Probar para Pruebas
