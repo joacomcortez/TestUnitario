@@ -3,7 +3,7 @@ package testunitario.EstadoEnvio;
 public class EstadoEnvio {
     private String nombreEstadoEnvio;
 
-    public EstadoEnvio(String nombreEstadoEnvio){
+    public EstadoEnvio(String nombreEstadoEnvio) {
         this.nombreEstadoEnvio = nombreEstadoEnvio;
     }
 

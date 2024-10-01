@@ -11,19 +11,19 @@ import testunitario.Pedido.Pedido;
 
 public class TestEnvio {
     @Test
-    public void validarClaseEnvio(){
+    public void validarClaseEnvio() {
         Envio envio = new Envio();
         assertNotNull(envio, "La instancia de envio debe estar creada");
     }
     
     @Test
-    public void testNumeroPedido(){
+    public void testNumeroPedido() {
     Envio envio = new Envio();
         assertNotNull(envio.getNumeroEnvio(), "El numero de envio no debe ser null");
     }
 
     @Test
-    public void testArrayPedidos(){
+    public void testArrayPedidos() {
         Envio envio = new Envio();
         Pedido p1 = new Pedido();
         Pedido p2 = new Pedido();

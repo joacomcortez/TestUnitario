@@ -1,51 +1,70 @@
-
 name: Java CI with Gradle
 
+# Activar la pipeline cuando se realicen push en estas ramas
 on:
   push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
+    branches:
+      - development # Rama de desarrollo
+      - testing # Rama de pruebas
+      - stage # Rama de producción
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # Ejecutar en un entorno de Ubuntu
     permissions:
-      contents: read
+      contents: read # Permiso para leer contenido del repositorio
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - uses: actions/checkout@v4 # Clonar el repositorio
+      - name: Configurar JDK 17
+        uses: actions/setup-java@v4 # Configurar JDK
+        with:
+          java-version: "17" # Versión de Java a utilizar
+          distribution: "temurin"
 
-    # Configure Gradle for optimal use in GitHub Actions, including caching of downloaded dependencies.
-    # See: https://github.com/gradle/actions/blob/main/setup-gradle/README.md
-    - name: Setup Gradle
-      uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+      - name: Configurar Gradle
+        uses: gradle/actions/setup-gradle@v3.1.0 # Configurar Gradle para el proyecto
 
-    - name: Build with Gradle Wrapper
-      run: ./gradlew build
+      # Rama de desarrollo: Solo compilar, no ejecutar pruebas ni desplegar
+      - name: Compilar para Desarrollo
+        if: github.ref == 'refs/heads/development' # Solo se ejecuta si es la rama de desarrollo
+        run: ./gradlew clean assemble # Limpiar y ensamblar el proyecto
 
+      # Ejecutar Checkstyle para comprobar buenas prácticas de codificación
+      - name: Ejecutar Checkstyle
+        run: ./gradlew checkstyleMain checkstyleTest # Ejecutar Checkstyle en el código
 
-  dependency-submission:
+      # Rama de pruebas: Ejecutar pruebas, no desplegar, detenerse después de las pruebas
+      - name: Probar para Pruebas
+        if: github.ref == 'refs/heads/testing' # Solo se ejecuta si es la rama de pruebas
+        run: ./gradlew clean test # Limpiar y ejecutar pruebas
 
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
+      # Rama de producción: Compilación completa, detenerse para aprobación manual antes de desplegar
+      - name: Compilar para Producción
+        if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de producción
+        run: ./gradlew clean build # Limpiar y construir el proyecto
+
+  # Aprobación manual antes del despliegue
+  manual-approval:
+    needs: build # Este trabajo se ejecuta después de que el trabajo de compilación se complete
+    runs-on: ubuntu-latest # Ejecutar en un entorno de Ubuntu
+    if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de producción
 
     steps:
-    - uses: actions/checkout@v4
-    - name: Set up JDK 17
-      uses: actions/setup-java@v4
-      with:
-        java-version: '17'
-        distribution: 'temurin'
+      - name: Esperar aprobación manual
+        run: |
+          echo "Esperando aprobación manual antes del despliegue."
+          echo "Puedes aprobar este flujo de trabajo desde la pestaña de Actions en GitHub."
 
-    # Generates and submits a dependency graph, enabling Dependabot Alerts for all project dependencies.
-    # See: https://github.com/gradle/actions/blob/main/dependency-submission/README.md
-    - name: Generate and submit dependency graph
-      uses: gradle/actions/dependency-submission@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+  deploy:
+    needs: manual-approval # El despliegue solo sucede después de la aprobación manual
+    runs-on: ubuntu-latest # Ejecutar en un entorno de Ubuntu
+    if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de produccion (stage en este caso)
+    steps:
+      - name: Simular despliegue en el entorno de producción (stage)
+        run: |
+          echo "Iniciando el despliegue en el entorno de producción (simulado)"
+          echo "Compilación completada, simularíamos copiar los archivos y ejecutar el script de despliegue."
+          echo "Desplegando build en el entorno simulado"
+          echo "Ejecución del script de despliegue simulado"
+          echo "El despliegue en el entorno de producción (simulado) ha finalizado exitosamente"

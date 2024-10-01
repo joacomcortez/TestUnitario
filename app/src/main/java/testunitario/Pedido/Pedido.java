@@ -27,7 +27,7 @@ public class Pedido {
         this.fecha = LocalDateTime.now();
     }
     
-    public Factura getFactura(){
+    public Factura getFactura() {
         return factura;
     }
     public int getNumeroPedido() {
@@ -36,7 +36,7 @@ public class Pedido {
     public  LocalDateTime getFecha() {
         return fecha;
     }
-    public void setFactura(Factura f){
+    public void setFactura(Factura f) {
         factura = f;
     }
     private int generateRandomNumeroEnvio() {
@@ -47,7 +47,7 @@ public class Pedido {
         return randomNum;
     }
 
-    public void assignEnvio(Envio e){
+    public void assignEnvio(Envio e) {
         this.envio = e;
     }
 }
