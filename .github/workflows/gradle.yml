@@ -59,14 +59,12 @@ jobs:
   deploy:
     needs: manual-approval # El despliegue solo sucede después de la aprobación manual
     runs-on: ubuntu-latest # Ejecutar en un entorno de Ubuntu
-    if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de producción
+    if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de produccion (stage en este caso)
     steps:
-      - name: Desplegar en el entorno de producción
+      - name: Simular despliegue en el entorno de producción (stage)
         run: |
-          # Agrega aquí tus comandos de despliegue
-          echo "Desplegando en el entorno de producción"
-          scp -r ./build user@production-server:/path/to/deploy  # Copiar archivos al servidor de producción
-          ssh user@production-server 'bash -s' << 'EOF'
-            cd /path/to/deploy  # Cambiar al directorio de despliegue
-            ./deploy-script.sh  # Ejecutar el script de despliegue
-          EOF
+          echo "Iniciando el despliegue en el entorno de producción (simulado)"
+          echo "Compilación completada, simularíamos copiar los archivos y ejecutar el script de despliegue."
+          echo "Desplegando build en el entorno simulado"
+          echo "Ejecución del script de despliegue simulado"
+          echo "El despliegue en el entorno de producción (simulado) ha finalizado exitosamente"
