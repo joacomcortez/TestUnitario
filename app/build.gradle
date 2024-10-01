@@ -9,6 +9,7 @@
 plugins {
     // Apply the application plugin to add support for building a CLI application in Java.
     id 'application'
+    id 'checkstyle'
 }
 
 repositories {
@@ -16,9 +17,16 @@ repositories {
     mavenCentral()
 }
 
+checkstyle {
+    toolVersion = '9.3' // or the version you are using
+    // configFile = file("${project.rootDir}/checkstyle.xml") // path to your Checkstyle config file
+    configFile = file("checkstyle.xml") // path to your Checkstyle config file
+
+}
 dependencies {
     // Use JUnit Jupiter for testing.
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+    checkstyle "com.puppycrawl.tools:checkstyle:9.3" // Use a valid version
 
     // This dependency is used by the application.
     implementation 'com.google.guava:guava:31.1-jre'

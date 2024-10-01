@@ -10,13 +10,13 @@ import testunitario.Cliente.Cliente;
 
 public class TestCliente {
     @Test
-    public void validarClaseCliente(){
+    public void validarClaseCliente() {
         Cliente cliente = new Cliente("nombre","apellido",5500);
         assertNotNull(cliente, "La instancia de cliente debe estar creada");
     }
     
     @Test
-    public void testGettersCliente(){
+    public void testGettersCliente() {
     Cliente cliente = new Cliente("nombreTest","apellidoTest", 5500);
 
         assertNotNull(cliente.getNombre(), "El nombre no debe ser null");

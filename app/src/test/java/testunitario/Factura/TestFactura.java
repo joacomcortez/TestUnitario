@@ -10,21 +10,21 @@ import testunitario.Pedido.Pedido;
 
 public class TestFactura {
     @Test
-    public void validarClaseFactura(){
+    public void validarClaseFactura() {
         Pedido p = new Pedido();
         Factura factura = new Factura(p);
         assertNotNull(factura, "La instancia de Factura debe estar creada");
     }
     
     @Test
-    public void testNumeroFactura(){
+    public void testNumeroFactura() {
         Pedido p = new Pedido();
         Factura factura = new Factura(p);
         assertNotNull(factura.getNumFactura(), "El numero de Factura no debe ser null");
     }
 
     @Test
-    public void testDatesFactura(){
+    public void testDatesFactura() {
         Pedido p = new Pedido();
         Factura factura = new Factura(p);
         assertNotNull(factura.getFechaHoraFactura(), "la fecha no debe ser null");
@@ -33,7 +33,7 @@ public class TestFactura {
     }
     
     @Test
-    public void testFacturaHasPedido(){
+    public void testFacturaHasPedido() {
         Pedido p = new Pedido();
         Factura factura = new Factura(p);
         assertNotNull(factura.getPedido(), "una factura debe estar asociada a un pedido");

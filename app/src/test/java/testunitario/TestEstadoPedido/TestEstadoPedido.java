@@ -10,12 +10,12 @@ import testunitario.EstadoPedido.EstadoPedido;
 
 public class TestEstadoPedido {
     @Test
-    public void validarClaseEstadoPedido(){
+    public void validarClaseEstadoPedido() {
         EstadoPedido estadoPedido1 = new EstadoPedido("Pagado");
         assertNotNull(estadoPedido1, "La instancia de envio debe estar creada");
     }
     @Test
-    public void verificarExistenciaEstado(){
+    public void verificarExistenciaEstado() {
         EstadoPedido estadoPedido2 = new EstadoPedido("Pendiente de pago");
         String resultado = estadoPedido2.getNombreEstadoPedido();
         assertEquals(resultado, "Pendiente de pago");

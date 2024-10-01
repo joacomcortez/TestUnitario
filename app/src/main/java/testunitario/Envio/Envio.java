@@ -27,7 +27,7 @@ public class Envio {
         this.pedidos = pedidos;
     }
 
-    public void addPedido (Pedido e){
+    public void addPedido (Pedido e) {
         pedidos.add(e);
     }
    
