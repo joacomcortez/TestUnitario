@@ -61,10 +61,7 @@ jobs:
     runs-on: ubuntu-latest # Ejecutar en un entorno de Ubuntu
     if: github.ref == 'refs/heads/stage' # Solo se ejecuta si es la rama de produccion (stage en este caso)
     steps:
-      - name: Simular despliegue en el entorno de producción (stage)
+      - name: Simular despliegue en el entorno de pre-producción (stage)
         run: |
-          echo "Iniciando el despliegue en el entorno de producción (simulado)"
-          echo "Compilación completada, simularíamos copiar los archivos y ejecutar el script de despliegue."
-          echo "Desplegando build en el entorno simulado"
-          echo "Ejecución del script de despliegue simulado"
+          echo "Iniciando el despliegue en el entorno de pre-producción"
           echo "El despliegue en el entorno de producción (simulado) ha finalizado exitosamente"
